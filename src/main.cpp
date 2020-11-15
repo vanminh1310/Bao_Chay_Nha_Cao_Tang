@@ -43,9 +43,9 @@ void setup()
   Serial.begin(9600);
   pinMode(ledgr,OUTPUT);
   pinMode(ledred,OUTPUT);
+  // dislay
   dht.begin();
-
-   display.begin(SSD1306_SWITCHCAPVCC, 0x78>>1);
+  display.begin(SSD1306_SWITCHCAPVCC, 0x78>>1);
   display.display();
   delay(2000);
   display.clearDisplay();
@@ -148,7 +148,7 @@ void dth11(){
   display.println("VanMinh");
   display.display();
   display.clearDisplay();          
-  delay(1000);    
+  delay(200);    
 }
 
 
