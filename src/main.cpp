@@ -69,18 +69,18 @@ void Gas()
    if (gas >500)
 
   {
-     tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,250,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,250,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,250,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,250,0);
-    tone(BUZZER_PIN,4058,125,0);
+    //  tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,250,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,250,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,250,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,250,0);
+    // tone(BUZZER_PIN,4058,125,0);
 
   }
   delay(500);
@@ -100,18 +100,18 @@ void Fire(){
   if (fire_analog < 4095)
 
   {
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,250,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,250,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,250,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,125,0);
-    tone(BUZZER_PIN,4058,250,0);
-    tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,250,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,250,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,250,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,125,0);
+    // tone(BUZZER_PIN,4058,250,0);
+    // tone(BUZZER_PIN,4058,125,0);
 
     
   }
