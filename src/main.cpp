@@ -94,11 +94,9 @@ void Gas(void)
   Firebase.setInt(firebaseData,"Floors1/G",gas_digital);
   Serial.print("Khi gas: ");
   Serial.println(gas);
-  Serial.print("\t");
   Serial.print("Gas Class: ");
   Serial.print(gas_digital);
-  Serial.print("\t");
-  Serial.print("\t");
+ 
    if (gas_digital==0)
 
   {
@@ -131,11 +129,9 @@ void Fire(){
  
   Serial.print("Fire: ");
   Serial.println(fire_analog);
-  Serial.print("\t");
   Serial.print("Fire Class: ");
   Serial.print(fire_digital);
-  Serial.print("\t");
-  Serial.print("\t");
+ 
  
   if (fire_digital == 0)
 
@@ -168,9 +164,8 @@ void dth11(){
   Serial.print("Nhiet do: ");
   Serial.println(t);               
   Serial.print("Do am: ");
-  Serial.println(h);  
-              
-  Serial.println();     
+  Serial.println(h);              
+ 
 
 
 
@@ -221,9 +216,12 @@ void loop()
     
  
   // Fire();
-  // // dth11();
+  // dth11();
   // Gas();
   // // digitalWrite(ledred,HIGH);
   // // digitalWrite(ledgr,HIGH);
 }
 
+
+
+    
