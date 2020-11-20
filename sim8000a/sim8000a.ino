@@ -1,3 +1,4 @@
+#include "ESP32_MailClient.h"
 #include <Tone32.h>
 #include<WiFi.h>
 #include <WiFiUdp.h>
@@ -33,6 +34,13 @@ uint8_t readline(char *buff, uint8_t maxbuff, uint16_t timeout = 0);
 
 #define LED_BLUE  13
 #define RELAY 14
+
+#define emailSenderAccount    "aesp5286@gmail.com"    
+#define emailSenderPassword   "123456@@"
+#define emailRecipient        "taminh39@gmail.com"
+#define smtpServer            "smtp.gmail.com"
+#define smtpServerPort        465
+#define emailSubject          "ESP32"
 
 const unsigned char myBitmap [] PROGMEM = {
   0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xf0,
@@ -105,6 +113,9 @@ const unsigned char myBitmap [] PROGMEM = {
 void setup()
 {
   sdt = "+84388424530";
+  smtpData.setLogin(smtpServer, smtpServerPort, emailSenderAccount, emailSenderPassword);
+    smtpData.setSender("ESP32", emailSenderAccount);
+    smtpData.setPriority("High");
   pinMode(LED_BLUE, OUTPUT);
   pinMode(RELAY, OUTPUT);
   pinMode(SIM800L_POWER, OUTPUT);
