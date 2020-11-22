@@ -38,9 +38,9 @@ unsigned long pretime2 = 0;
 // Khai bao chan
 // khai bao chan cam bien
 int Gas_analog = 15;
-int Gas_digital = 23;
+int Gas_digital = 2;
 int Fire_analog = 4;
-int Fire_digital = 2;
+int Fire_digital = 23;
 //Khai bao ngoai vi 
 int ledred = 33;
 int ledgr = 32;
