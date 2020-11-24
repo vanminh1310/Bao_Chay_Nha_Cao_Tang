@@ -1,5 +1,5 @@
 //#include "ESP32_MailClient.h"
-//#include "main.h"
+#include "main.h"
 #include <Tone32.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
@@ -218,7 +218,7 @@ void readGas()
       if (g1 == 0)
       {
         sim800l.sendSMS(sdt, "Floors1 Fire ");
-        //sendmail("<div style=\"color:#ff0000;font-size:30px;\"> Cảnh báo  P1-T1 phát hiện có khí Gas ! </div> <br> <div style=\"font-size:10px;\">- From ESP32</div>");
+        buzzer();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(30, 32);
@@ -240,7 +240,7 @@ void readGas()
       if (g2 == 0)
       {
         sim800l.sendSMS(sdt, "Floors2 Fire ");
-        // sendmail("<div style=\"color:#ff0000;font-size:30px;\"> Cảnh báo  P1-T2 phát hiện có khí Gas ! </div> <br> <div style=\"font-size:10px;\">- From ESP32</div>");
+        buzzer();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(30, 32);
@@ -261,7 +261,7 @@ void readGas()
       if (g3 == 0)
       {
         sim800l.sendSMS(sdt, "Floors3 Fire ");
-        // sendmail("<div style=\"color:#ff0000;font-size:30px;\"> Cảnh báo  P1-T3 phát hiện có khí Gas ! </div> <br> <div style=\"font-size:10px;\">- From ESP32</div>");
+        buzzer();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(30, 32);
@@ -282,7 +282,7 @@ void readGas()
       if (g4 == 0)
       {
         sim800l.sendSMS(sdt, "Floors4 Fire ");
-        // sendmail("<div style=\"color:#ff0000;font-size:30px;\"> Cảnh báo  P1-T4 phát hiện có khí Gas ! </div> <br> <div style=\"font-size:10px;\">- From ESP32</div>");
+       buzzer();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(30, 32);
@@ -307,6 +307,7 @@ void readFire()
       if (F1 == 0)
       {
         sim800l.sendSMS(sdt, "Floors1 Fire ");
+        buzzer();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(30, 32);
@@ -327,6 +328,7 @@ void readFire()
       if (F2 == 0)
       {
         sim800l.sendSMS(sdt, "Floors2 Fire ");
+        buzzer();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(30, 32);
@@ -347,6 +349,7 @@ void readFire()
       if (F3 == 0)
       {
         sim800l.sendSMS(sdt, "Floors3 Fire ");
+        buzzer();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(30, 32);
@@ -367,6 +370,7 @@ void readFire()
       if (F4 == 0)
       {
         sim800l.sendSMS(sdt, "Floors4 Fire ");
+        buzzer();
         display.setTextSize(1);
         display.setTextColor(WHITE);
         display.setCursor(30, 32);

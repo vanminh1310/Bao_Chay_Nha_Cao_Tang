@@ -85,7 +85,7 @@ static bool measure_environment( float *temperature, float *humidity )
 {
   static unsigned long measurement_timestamp = millis( );
 
-  if( millis( ) - measurement_timestamp > 100 )
+  if( millis( ) - measurement_timestamp > 1000 )
   {
     if( dht_sensor.measure( temperature, humidity ) == true )
     {
@@ -164,6 +164,7 @@ void loop()
   float humidity;
   if( measure_environment( &temperature, &humidity ) == true )
   {
+   
     Serial.print( "Temperature = " );
     Serial.print( temperature, 1 );
      Firebase.setFloat(firebaseData,"Floors1/T",temperature);
@@ -171,11 +172,13 @@ void loop()
     Serial.print( humidity, 1 );
     Serial.println( "%" );
      Firebase.setFloat(firebaseData,"Floors1/H",humidity);
-    Fire();
+      Fire();
     Gas();
-  }
-
    
+  }
+  
+
+    
   
  
 }
