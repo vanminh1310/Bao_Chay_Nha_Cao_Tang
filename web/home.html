@@ -1,27 +1,752 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/home.css">
-    <title>Home</title>
+  <meta charset="utf-8">
+  <title>Wireless fire alarm system</title>
+  <link rel="stylesheet" href="css/home1.css">
+  <link rel="shortcut icon" href="img/Traffic-Lights.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
+
 <body>
-    <div id="user_div" class="loggedin-div">
-        <h3>Welcome User</h3>
-        <p style="color:red ;" id="user_para"></p>
-        <button class="btn" onclick="logout()">Logout</button>
-        
+
+
+  <input type="checkbox" id="check">
+  <!--header area start-->
+  <header>
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+
+    <div class="left_area">
+      <h3>Wireless fire<span> alarm system</span></h3>
     </div>
-    
-<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
-<!-- Firebase App is always required and must be first -->
-<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
-<!-- Add additional services that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
- <script src="js/key.js"></script>
-    
+
+
+    <div class="right_area">
+      <div class="clock" id="clock"></div>
+      <button class="logout_btn"><img src="img/avatar.png" class="img_admin" alt=""></button>
+    </div>
+
+  </header>
+
+  <!--header area end-->
+  <!--sidebar start-->
+  <div class="sidebar">
+    <center>
+      <img src="img/avatar.png" class="profile_image" alt="">
+      <h4>WECOME</h4>
+      <p class="user" style="color: black;" id="user_para"></p>
+    </center>
+    <a href="home1"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+
+    <a href="home"><i class="fas fa-info-circle"></i><span>About</span></a>
+
+    <a onclick="logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+
+
+    <!-- <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a> -->
+  </div>
+  <!--sidebar end-->
+
+
+  <div class="content">
+
+
+    <div class="luachon" style="display: flex;">
+
+      <label for="Tầng">Chọn tầng :</label>
+      <select style="height: 20px;" name="Tầng" id="T" onchange="showw()">
+        <option value="TC">Tất cả</option>
+        <option value="T1">Tầng 1</option>
+        <option value="T2">Tầng 2</option>
+        <option value="T3">Tầng 3</option>
+        <option value="T4">Tầng 4</option>
+        <option value="T5">Tầng 5</option>
+      </select>
+    </div>
+
+
+    <!--Tang 1  -->
+
+    <div class="T1" id="t1" style="display: flex; display: none;">
+      <div class="card">
+        <div class="card-text">
+          <H3>101</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t"></strong> </h6>
+            <h6>H:<strong id="h"></strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f"></strong> </h6>
+            <h6>G:<strong id="g"></strong> </h6>
+          </div>
+        
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>102</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>103</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>104</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>105</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>106</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>107</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>108</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>109</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>110</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+    <!--tang 2  -->
+    <div class="T2" id="t2" style="display: flex;  display: none;">
+      <div class="card">
+        <div class="card-text">
+          <H3>201</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>202</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t202">Nan</strong> </h6>
+            <h6>H:<strong id="h202">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f202"></strong> </h6>
+            <h6>G:<strong id="g202"></strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>203</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>204</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>205</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>206</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>207</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>208</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>209</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>210</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- tang 3 -->
+    <div class="T3" id="t3" style="display: flex;  display: none;">
+      <div class="card">
+        <div class="card-text">
+          <H3>301</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>302</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>303</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t303">Nan</strong> </h6>
+            <h6>H:<strong id="h303">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f303"></strong> </h6>
+            <h6>G:<strong id="g303"></strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>304</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>305</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>306</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>307</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>308</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>309</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>310</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tang 4 -->
+    <div class="T4" id="t4" style="display: flex;  display: none;">
+      <div class="card">
+        <div class="card-text">
+          <H3>401</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>402</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>403</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>404</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t404">Nan</strong> </h6>
+            <h6>H:<strong id="h404">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f404">Ok</strong> </h6>
+            <h6>G:<strong id="g404">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>405</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>406</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>407</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>408</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>409</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>410</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tang 5  -->
+    <div class="T5" id="t5" style="display: flex;  display: none;">
+      <div class="card">
+        <div class="card-text">
+          <H3>501</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>502</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>503</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>504</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>505</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>506</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>507</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>508</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>509</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-text">
+          <H3>510</H3>
+          <div style="display: flex;"> <h6>T:<strong id="t">Nan</strong> </h6>
+            <h6>H:<strong id="h">Nan</strong> </h6>
+          </div>
+          <div class="gf" style="display: flex;"> 
+            <h6>F:<strong id="f">Ok</strong> </h6>
+            <h6>G:<strong id="g">Ok</strong> </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+
+
+
+
+
+
+
+
+
+<!--  -->
+  </div>
+ 
+    <div id="modal_ecall" class="modal_ecall">
+      <div class="modal_content_ecall">
+        <div class="modal_body_ecall">
+            <h1 class="tb">Thông báo <i class="fas fa-exclamation"></i>  </h1>
+            <!-- <img class="img" src="img/warring.png"> -->
+           <br>
+            <strong>Cảnh báo phòng </strong> 
+            <strong id="name_p"> </strong>
+            <strong id="st"> </strong>
+           
+        </div>   
+        <div class="btn_ecall">
+            <button id="bnt1" class="btn_ecall_ btn1">Chi Tiết </button>
+            <button id="bnt2" class="btn_ecall_ btn2">Đóng</button>
+
+        </div>
+
+
+        </div>
+
+
+    </div>
+
+<!--  -->
+  <script src="js/modal.js">
+  </script>
+
+  
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+
+  
+
+  <script src="js/test.js"></script>
+
+  <!-- <script src="/js/test.js" ></script> -->
+
+
 </body>
+
 </html>
