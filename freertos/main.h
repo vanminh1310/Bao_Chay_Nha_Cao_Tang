@@ -7,9 +7,9 @@
 
 #include <Wire.h>
 #define FIREBASE_HOST "vann-53570.firebaseio.com" // ten host cua firebase
-#define FIREBASE_AUTH "LC6fDYVqNO7VVBfoymADdWtLZVl6jr6WVJxhONrF" // ma 
-#define WIFI_SSID "Joy"
-#define WIFI_PASSWORD "012345678"
+#define FIREBASE_AUTH "LC6fDYVqNO7VVBfoymADdWtLZVl6jr6WVJxhONrF" // ma dôi cái này nữa
+#define WIFI_SSID "joy" //cái này nữa
+#define WIFI_PASSWORD "12345678"// đây nữa
 FirebaseData firebaseData; // firebase datb
 
 //timer 
@@ -68,4 +68,3 @@ void buzzer(){
 //     tone(BUZZER_PIN,4058,250,0);
 //     tone(BUZZER_PIN,4058,125,0);
     }
-    
