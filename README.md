@@ -28,6 +28,6 @@
   ![image](https://user-images.githubusercontent.com/53778428/114486743-9e210d80-9c38-11eb-9fdb-629a2234d15f.png)
 
 #### Contributors
- - Tạ Văn Minh [Facebook](https://www.facebook.com/taminh1310) [Email](taminh39@gmail.com)
+ - Tạ Văn Minh [Facebook](https://www.facebook.com/vanminh1310) [Email](taminh39@gmail.com)
 
 
